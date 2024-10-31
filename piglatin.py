@@ -1,3 +1,5 @@
+from gettext import translation
+
 from pyparsing import Empty
 
 def isVowel(char):
@@ -16,14 +18,19 @@ class PigLatin:
     def translate(self) -> str:
         if self.phrase == "":
             return "nil"
+        translation = ""
         for word in [self.phrase]:
+            value = ""
             firstLetter = word[0].lower()
             if isVowel(firstLetter):
                 lastLetter = word[-1]
                 if lastLetter == "y":
-                    return word + "nay"
-                if isVowel(lastLetter):
-                    return word + "yay"
-                return word + "ay"
+                    value = word + "nay"
+                elif isVowel(lastLetter):
+                    value = word + "yay"
+                else:
+                    value = word + "ay"
             else:
-                return word[1:] + word[0] + "ay"
+                value = word[1:] + word[0] + "ay"
+            translation = translation +""+ value
+        return translation

@@ -34,4 +34,10 @@ class TestPigLatin(unittest.TestCase):
         self.PigLatinTranslator.PigLatinTranslator("baca")
         self.assertEqual("acabay", self.PigLatinTranslator.translate())
 
+    def test_translate_multimple_simple_word(self):
+        self.PigLatinTranslator.PigLatinTranslator("hello world")
+        self.assertEqual("ellohay orldway", self.PigLatinTranslator.translate())
 
+    def test_translate_multimple_complex_word(self):
+        self.PigLatinTranslator.PigLatinTranslator("well-being")
+        self.assertEqual("ellway-eingbay", self.PigLatinTranslator.translate())
