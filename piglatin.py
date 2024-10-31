@@ -1,3 +1,6 @@
+from pyparsing import Empty
+
+
 class PigLatin:
     def __init__(self, phrase: str):
         self.phrase = phrase
@@ -6,4 +9,6 @@ class PigLatin:
         return self.phrase
 
     def translate(self) -> str:
-        pass
+        if self.phrase == "":
+            return "nil"
+        return ""

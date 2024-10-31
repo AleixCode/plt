@@ -8,6 +8,9 @@ class PigLatinTranslator:
         self.translator = PigLatin(phrase)
         return self.translator
 
+    def translate(self) -> str:
+        return self.translator.translate()
+
     def get_phrase(self) -> str:
         return self.translator.get_phrase()
 
