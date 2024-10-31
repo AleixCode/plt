@@ -18,4 +18,16 @@ class TestPigLatin(unittest.TestCase):
         self.PigLatinTranslator.PigLatinTranslator("")
         self.assertEqual("nil", self.PigLatinTranslator.translate())
 
+    def test_translate_signle_word_with_starting_vowel_ends_y(self):
+        self.PigLatinTranslator.PigLatinTranslator("aly")
+        self.assertEqual("alynay", self.PigLatinTranslator.translate())
+
+    def test_translate_signle_word_with_starting_vowel_ends_vowel(self):
+        self.PigLatinTranslator.PigLatinTranslator("ala")
+        self.assertEqual("alayay", self.PigLatinTranslator.translate())
+
+    def test_translate_signle_word_with_starting_vowel_ends_consonant(self):
+        self.PigLatinTranslator.PigLatinTranslator("alz")
+        self.assertEqual("alzay", self.PigLatinTranslator.translate())
+
 
