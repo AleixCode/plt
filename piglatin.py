@@ -25,3 +25,5 @@ class PigLatin:
                 if isVowel(lastLetter):
                     return word + "yay"
                 return word + "ay"
+            else:
+                return word[1:] + word[0] + "ay"

@@ -30,4 +30,8 @@ class TestPigLatin(unittest.TestCase):
         self.PigLatinTranslator.PigLatinTranslator("alz")
         self.assertEqual("alzay", self.PigLatinTranslator.translate())
 
+    def test_translate_signle_word_with_starting_consonant(self):
+        self.PigLatinTranslator.PigLatinTranslator("baca")
+        self.assertEqual("acabay", self.PigLatinTranslator.translate())
+
 
